@@ -22,6 +22,48 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_add.png
   AssetGenImage get icAdd => const AssetGenImage('assets/images/ic_add.png');
 
+  /// File path: assets/images/ic_arrow_bottom.svg
+  String get icArrowBottom => 'assets/images/ic_arrow_bottom.svg';
+
+  /// File path: assets/images/ic_arrow_corner.svg
+  String get icArrowCorner => 'assets/images/ic_arrow_corner.svg';
+
+  /// File path: assets/images/ic_arrow_line_down.svg
+  String get icArrowLineDown => 'assets/images/ic_arrow_line_down.svg';
+
+  /// File path: assets/images/ic_arrow_line_left.svg
+  String get icArrowLineLeft => 'assets/images/ic_arrow_line_left.svg';
+
+  /// File path: assets/images/ic_arrow_line_right.svg
+  String get icArrowLineRight => 'assets/images/ic_arrow_line_right.svg';
+
+  /// File path: assets/images/ic_arrow_line_up.svg
+  String get icArrowLineUp => 'assets/images/ic_arrow_line_up.svg';
+
+  /// File path: assets/images/ic_arrow_right_light.svg
+  String get icArrowRightLight => 'assets/images/ic_arrow_right_light.svg';
+
+  /// File path: assets/images/ic_arrow_solid.svg
+  String get icArrowSolid => 'assets/images/ic_arrow_solid.svg';
+
+  /// File path: assets/images/ic_arrow_solid_down.svg
+  String get icArrowSolidDown => 'assets/images/ic_arrow_solid_down.svg';
+
+  /// File path: assets/images/ic_arrow_solid_left.svg
+  String get icArrowSolidLeft => 'assets/images/ic_arrow_solid_left.svg';
+
+  /// File path: assets/images/ic_arrow_solid_right.svg
+  String get icArrowSolidRight => 'assets/images/ic_arrow_solid_right.svg';
+
+  /// File path: assets/images/ic_arrow_solid_up.svg
+  String get icArrowSolidUp => 'assets/images/ic_arrow_solid_up.svg';
+
+  /// File path: assets/images/ic_arrow_top.svg
+  String get icArrowTop => 'assets/images/ic_arrow_top.svg';
+
+  /// File path: assets/images/ic_close.svg
+  String get icClose => 'assets/images/ic_close.svg';
+
   /// File path: assets/images/ic_collab.png
   AssetGenImage get icCollab =>
       const AssetGenImage('assets/images/ic_collab.png');
@@ -44,6 +86,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_meeting.png
   AssetGenImage get icMeeting =>
       const AssetGenImage('assets/images/ic_meeting.png');
+
+  /// File path: assets/images/ic_mgm_home.svg
+  String get icMgmHome => 'assets/images/ic_mgm_home.svg';
 
   /// File path: assets/images/ic_minus.png
   AssetGenImage get icMinus =>
@@ -76,12 +121,27 @@ class $AssetsImagesGen {
         background,
         bgVoffice,
         icAdd,
+        icArrowBottom,
+        icArrowCorner,
+        icArrowLineDown,
+        icArrowLineLeft,
+        icArrowLineRight,
+        icArrowLineUp,
+        icArrowRightLight,
+        icArrowSolid,
+        icArrowSolidDown,
+        icArrowSolidLeft,
+        icArrowSolidRight,
+        icArrowSolidUp,
+        icArrowTop,
+        icClose,
         icCollab,
         icCommunicate,
         icContact,
         icHome,
         icLibrary,
         icMeeting,
+        icMgmHome,
         icMinus,
         icMission,
         icSign,
