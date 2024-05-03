@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/widget_common.dart';
+
 class MissionScreen extends StatefulWidget {
   const MissionScreen({super.key});
 
@@ -12,6 +14,7 @@ class _MissionScreenState extends State<MissionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: WidgetCommon.background_color_home,
         automaticallyImplyLeading: false,
         title: Text(
           "Mission",
@@ -21,8 +24,11 @@ class _MissionScreenState extends State<MissionScreen> {
               .copyWith(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(16),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: WidgetCommon.background_color_home,
         child: Column(
           children: [
             Text(

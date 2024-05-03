@@ -40,6 +40,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
         body: PageView(
           controller: _pageController,
+          physics: NeverScrollableScrollPhysics(),
           children: const [
             HomeScreen(),
             DocumentScreen(),

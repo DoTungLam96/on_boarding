@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../common/widget_common.dart';
+
 class DocumentScreen extends StatefulWidget {
   const DocumentScreen({super.key});
 
@@ -13,16 +15,20 @@ class _DocumentScreenState extends State<DocumentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: WidgetCommon.background_color_home,
         automaticallyImplyLeading: false,
         title: Text(
-          "Document",
+          "",
           style: Theme.of(context)
               .textTheme
               .bodyLarge!
               .copyWith(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: WidgetCommon.background_color_home,
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [

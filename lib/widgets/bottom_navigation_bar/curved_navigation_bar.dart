@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import '../../common/widget_common.dart';
 import 'curved_navigation_bar_item.dart';
 import 'nav_bar_item_widget.dart';
 import 'nav_custom_painter.dart';
@@ -142,7 +143,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
         color: Colors.transparent,
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 237, 243, 249),
+            color: WidgetCommon.background_color_home,
             spreadRadius: 5,
             blurRadius: 7,
             offset: const Offset(0, 3), // changes position of shadow

@@ -17,6 +17,7 @@ import '../common/widget_common.dart';
 import '../mock/list_favourite_home_mock.dart';
 import '../widgets/home/item_list_document_processing.dart';
 import '../widgets/home/item_list_favourite.dart';
+import '../widgets/home/mission_chart.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 237, 243, 249),
+      color: WidgetCommon.background_color_home,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: 196,
+          height: 204,
           child: ListView.builder(
             padding: EdgeInsets.only(top: 16),
             scrollDirection: Axis.horizontal,
@@ -148,10 +149,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       color: Colors.white,
       width: MediaQuery.of(context).size.width,
-      height: 120,
-      child: Text(
-        "Nhiệm vụ đơn vị",
-        style: WidgetCommon.text_font_18,
+      height: 350,
+      child: Column(
+        children: [
+          Text(
+            "Nhiệm vụ đơn vị",
+            style: WidgetCommon.text_font_18,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          Expanded(
+            child:
+                Container(height: 350, child: StackedBarChart.withSampleData()),
+          )
+        ],
       ),
     );
   }
@@ -174,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Container(
           padding: const EdgeInsets.all(16),
           width: MediaQuery.of(context).size.width,
-          height: 284,
+          height: 294,
           decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(

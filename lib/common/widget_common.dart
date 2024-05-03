@@ -40,4 +40,7 @@ class WidgetCommon {
       .textTheme
       .bodyMedium!
       .copyWith(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black);
+
+  static Color get background_color_home =>
+      const Color.fromARGB(255, 237, 243, 249);
 }

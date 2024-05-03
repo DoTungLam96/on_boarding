@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/widget_common.dart';
+
 class SignatureScreen extends StatefulWidget {
   const SignatureScreen({super.key});
 
@@ -12,16 +14,20 @@ class _SignatureScreenState extends State<SignatureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: WidgetCommon.background_color_home,
         automaticallyImplyLeading: false,
         title: Text(
-          "Signature",
+          "",
           style: Theme.of(context)
               .textTheme
               .bodyLarge!
               .copyWith(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: WidgetCommon.background_color_home,
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [

@@ -14,7 +14,7 @@ class ItemListDocumentProcessing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.only(left: 12, top: 12, bottom: 4, right: 12),
       width: 159,
       margin: const EdgeInsets.only(right: 12),
       decoration: const BoxDecoration(
@@ -23,7 +23,7 @@ class ItemListDocumentProcessing extends StatelessWidget {
             Radius.circular(12),
           )),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           IconWidget(
             path: image ?? "",
@@ -31,16 +31,18 @@ class ItemListDocumentProcessing extends StatelessWidget {
             height: 40,
           ),
           const SizedBox(
-            width: 12,
+            height: 8,
           ),
-          Text(
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            title ?? "",
-            style: WidgetCommon.text_font_16,
+          Flexible(
+            child: Text(
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              title ?? "",
+              style: WidgetCommon.text_font_16,
+            ),
           ),
           const SizedBox(
-            width: 8,
+            height: 8,
           ),
           Text(
             Utils.I.dateToString(timeStamp ?? 0, fomart: "dd/MM/yyyy HH:mm:ss"),
