@@ -21,7 +21,6 @@ class OnBoardingScreen extends StatelessWidget {
     );
 
     return IntroSingleScreen(
-      key: UniqueKey(),
       initCurrentPage: 0,
       title: "",
       imageBackground: Container(
@@ -39,7 +38,7 @@ class OnBoardingScreen extends StatelessWidget {
       ),
       introductionList: [
         IntroWidget(
-            title: "Chào mừng tới Hệ thống Văn phòng số",
+            title: "Chào mừng tới Hệ thống \nVăn phòng số",
             imageUrl: Assets.images.introImage.path),
         const CategoryWidget(),
         const FavouriteWidget(),

@@ -1,8 +1,7 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_on_boarding/widgets/icon_widget/icon_widget.dart';
-
 
 import '../../gen/assets.gen.dart';
 
@@ -18,12 +17,12 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.centerTitle = true,
       this.leadingIcon,
       this.leading,
-      this.onHomePress,
+      this.titleStyle,
       this.isClose,
       this.onClose,
-      this.isShowTrailingHome,
       this.automaticallyImplyLeading = true,
       this.flexibleSpace,
+      this.elevation,
       this.backgroundColor})
       : super(key: key);
 
@@ -36,14 +35,14 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool centerTitle;
   final String? leadingIcon;
   final Widget? leading;
-  final bool? isShowTrailingHome;
-  final VoidCallback? onHomePress;
+  final TextStyle? titleStyle;
+
   final bool? isClose;
   final VoidCallback? onClose;
   final bool automaticallyImplyLeading;
   final Color? backgroundColor;
   final Widget? flexibleSpace;
-
+  final double? elevation;
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
@@ -53,29 +52,25 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: backgroundColor ?? Colors.blue,
       centerTitle: centerTitle,
       leading: _buildLeadingWidget(context),
-      elevation: 0,
+      elevation: elevation ?? 0,
       flexibleSpace: flexibleSpace,
       leadingWidth: leadingWidth,
       titleSpacing: titleSpacing,
       automaticallyImplyLeading: automaticallyImplyLeading,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        statusBarBrightness: Brightness.light, // For iOS (dark icons)
+      ),
       title: child ??
-          Text(title ?? '',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: Colors.white)),
-      actions: isShowTrailingHome == true
-          ? [
-              IconButton(
-                  icon: IconWidget.ic24(
-                      path: leadingIcon ?? Assets.images.icMgmHome),
-                  onPressed: onHomePress != null
-                      ? onHomePress!
-                      : () {
-                          //to-do
-                        }),
-            ]
-          : actions,
+          Text(
+            title ?? '',
+            style: titleStyle ??
+                Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: 20,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w600),
+          ),
+      actions: actions,
     );
   }
 

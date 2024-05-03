@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/selected_item_cubit.dart';
-import '../model/interesting_model.dart';
+import '../../cubit/selected_item_cubit.dart';
+import '../../model/interesting_model.dart';
 
 class GridViewChips extends StatefulWidget {
   const GridViewChips(
@@ -29,7 +29,10 @@ class _GridViewChipsState extends State<GridViewChips> {
               children: [
                 Text(
                   widget.title,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontSize: 20),
                 ),
                 const SizedBox(
                   height: 24,
@@ -68,13 +71,15 @@ class _GridViewChipsState extends State<GridViewChips> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Color(0xff848E94),
+                  color: const Color(0xff848E94),
                 ),
                 color: isSelected == true ? const Color(0xffFFF1F4) : null),
             child: Text(
               widget.interestingList[index].name ?? "",
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  color: isSelected == true ? const Color(0xffEE0033) : null),
+                  fontSize: 14,
+                  color: isSelected == true ? const Color(0xffEE0033) : null,
+                  fontWeight: isSelected == true ? FontWeight.bold : null),
             ),
           ),
         );

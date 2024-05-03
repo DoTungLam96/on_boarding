@@ -2,23 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class IntroWidget extends StatelessWidget {
-  const IntroWidget({
-    Key? key,
-    required this.imageUrl,
-    required this.title,
-    this.mainTitle,
-  }) : super(key: key);
+  const IntroWidget(
+      {Key? key,
+      required this.imageUrl,
+      required this.title,
+      this.mainTitle,
+      this.mainTextStyle})
+      : super(key: key);
 
   final String imageUrl;
   final String title;
 
   final String? mainTitle;
 
+  final TextStyle? mainTextStyle;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 46, left: 24, right: 24),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             alignment: Alignment.center,
@@ -43,10 +48,11 @@ class IntroWidget extends StatelessWidget {
                 child: Text(title,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.clip,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(fontWeight: FontWeight.bold)),
+                    style: mainTextStyle ??
+                        Theme.of(context)
+                            .textTheme
+                            .bodyLarge!
+                            .copyWith(fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -57,29 +63,29 @@ class IntroWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildBottom(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        InkWell(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-                color: Color(0xffEE0033),
-                borderRadius: BorderRadius.circular(8)),
-            child: Text(
-              'Tiếp tục',
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-          ),
-        )
-      ],
-    );
-  }
+  // Widget _buildBottom(BuildContext context) {
+  //   return Column(
+  //     mainAxisSize: MainAxisSize.min,
+  //     crossAxisAlignment: CrossAxisAlignment.center,
+  //     children: [
+  //       InkWell(
+  //         onTap: () {},
+  //         child: Container(
+  //           padding: const EdgeInsets.all(16),
+  //           decoration: BoxDecoration(
+  //               color: const Color(0xffEE0033),
+  //               borderRadius: BorderRadius.circular(16)),
+  //           child: Text(
+  //             'Tiếp tụcc',
+  //             textAlign: TextAlign.center,
+  //             style: Theme.of(context)
+  //                 .textTheme
+  //                 .bodyMedium!
+  //                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+  //           ),
+  //         ),
+  //       )
+  //     ],
+  //   );
+  // }
 }

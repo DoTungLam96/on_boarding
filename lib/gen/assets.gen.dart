@@ -12,8 +12,22 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/avatar.jpg
+  AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.jpg');
+
+  /// File path: assets/images/avatar_a.jpg
+  AssetGenImage get avatarA =>
+      const AssetGenImage('assets/images/avatar_a.jpg');
+
+  /// File path: assets/images/background.png
+  AssetGenImage get backgroundPng =>
+      const AssetGenImage('assets/images/background.png');
+
   /// File path: assets/images/background.svg
-  String get background => 'assets/images/background.svg';
+  String get backgroundSvg => 'assets/images/background.svg';
+
+  /// File path: assets/images/bg_home.png
+  AssetGenImage get bgHome => const AssetGenImage('assets/images/bg_home.png');
 
   /// File path: assets/images/bg_voffice.png
   AssetGenImage get bgVoffice =>
@@ -61,6 +75,15 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_arrow_top.svg
   String get icArrowTop => 'assets/images/ic_arrow_top.svg';
 
+  /// File path: assets/images/ic_bell.svg
+  String get icBell => 'assets/images/ic_bell.svg';
+
+  /// File path: assets/images/ic_calendar.svg
+  String get icCalendar => 'assets/images/ic_calendar.svg';
+
+  /// File path: assets/images/ic_chokyduyet.svg
+  String get icChokyduyet => 'assets/images/ic_chokyduyet.svg';
+
   /// File path: assets/images/ic_close.svg
   String get icClose => 'assets/images/ic_close.svg';
 
@@ -75,6 +98,30 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_contact.png
   AssetGenImage get icContact =>
       const AssetGenImage('assets/images/ic_contact.png');
+
+  /// File path: assets/images/ic_doc.svg
+  String get icDoc => 'assets/images/ic_doc.svg';
+
+  /// File path: assets/images/ic_doc_1.svg
+  String get icDoc1 => 'assets/images/ic_doc_1.svg';
+
+  /// File path: assets/images/ic_doc_2.svg
+  String get icDoc2 => 'assets/images/ic_doc_2.svg';
+
+  /// File path: assets/images/ic_doc_3.svg
+  String get icDoc3 => 'assets/images/ic_doc_3.svg';
+
+  /// File path: assets/images/ic_document.svg
+  String get icDocument => 'assets/images/ic_document.svg';
+
+  /// File path: assets/images/ic_edit_home.svg
+  String get icEditHome => 'assets/images/ic_edit_home.svg';
+
+  /// File path: assets/images/ic_excel.svg
+  String get icExcel => 'assets/images/ic_excel.svg';
+
+  /// File path: assets/images/ic_eye_off.svg
+  String get icEyeOff => 'assets/images/ic_eye_off.svg';
 
   /// File path: assets/images/ic_home.png
   AssetGenImage get icHome => const AssetGenImage('assets/images/ic_home.png');
@@ -98,6 +145,15 @@ class $AssetsImagesGen {
   AssetGenImage get icMission =>
       const AssetGenImage('assets/images/ic_mission.png');
 
+  /// File path: assets/images/ic_notification.svg
+  String get icNotification => 'assets/images/ic_notification.svg';
+
+  /// File path: assets/images/ic_pdf.svg
+  String get icPdf => 'assets/images/ic_pdf.svg';
+
+  /// File path: assets/images/ic_search.svg
+  String get icSearch => 'assets/images/ic_search.svg';
+
   /// File path: assets/images/ic_sign.png
   AssetGenImage get icSign => const AssetGenImage('assets/images/ic_sign.png');
 
@@ -112,13 +168,36 @@ class $AssetsImagesGen {
   /// File path: assets/images/ic_text.png
   AssetGenImage get icText => const AssetGenImage('assets/images/ic_text.png');
 
+  /// File path: assets/images/ic_vanbanchoxetduyet.svg
+  String get icVanbanchoxetduyet => 'assets/images/ic_vanbanchoxetduyet.svg';
+
+  /// File path: assets/images/ic_vanbanchoxuly.svg
+  String get icVanbanchoxuly => 'assets/images/ic_vanbanchoxuly.svg';
+
+  /// File path: assets/images/ic_vanbanchuaden.svg
+  String get icVanbanchuaden => 'assets/images/ic_vanbanchuaden.svg';
+
+  /// File path: assets/images/ic_vanbanchuaxuly.svg
+  String get icVanbanchuaxuly => 'assets/images/ic_vanbanchuaxuly.svg';
+
+  /// File path: assets/images/ic_vanbanyeucaudatlich.svg
+  String get icVanbanyeucaudatlich =>
+      'assets/images/ic_vanbanyeucaudatlich.svg';
+
+  /// File path: assets/images/ic_xemthem.svg
+  String get icXemthem => 'assets/images/ic_xemthem.svg';
+
   /// File path: assets/images/intro_image.png
   AssetGenImage get introImage =>
       const AssetGenImage('assets/images/intro_image.png');
 
   /// List of all assets
   List<dynamic> get values => [
-        background,
+        avatar,
+        avatarA,
+        backgroundPng,
+        backgroundSvg,
+        bgHome,
         bgVoffice,
         icAdd,
         icArrowBottom,
@@ -134,20 +213,40 @@ class $AssetsImagesGen {
         icArrowSolidRight,
         icArrowSolidUp,
         icArrowTop,
+        icBell,
+        icCalendar,
+        icChokyduyet,
         icClose,
         icCollab,
         icCommunicate,
         icContact,
+        icDoc,
+        icDoc1,
+        icDoc2,
+        icDoc3,
+        icDocument,
+        icEditHome,
+        icExcel,
+        icEyeOff,
         icHome,
         icLibrary,
         icMeeting,
         icMgmHome,
         icMinus,
         icMission,
+        icNotification,
+        icPdf,
+        icSearch,
         icSign,
         icSignHub,
         icStorage,
         icText,
+        icVanbanchoxetduyet,
+        icVanbanchoxuly,
+        icVanbanchuaden,
+        icVanbanchuaxuly,
+        icVanbanyeucaudatlich,
+        icXemthem,
         introImage
       ];
 }

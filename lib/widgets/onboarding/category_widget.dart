@@ -13,7 +13,7 @@ import 'package:flutter_on_boarding/model/search_model.dart';
 import '../../constant/constant.dart';
 import '../../cubit/selected_item_cubit.dart';
 import '../../model/interesting_model.dart';
-import '../grid_view_chips.dart';
+import 'grid_view_chips.dart';
 
 class CategoryWidget extends StatefulWidget {
   const CategoryWidget({super.key});
@@ -40,8 +40,12 @@ class _CategoryWidgetState extends State<CategoryWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16),
+    return Container(
+      margin: EdgeInsets.only(top: 16),
+      padding: const EdgeInsets.only(
+        left: 16,
+        right: 16,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -52,16 +56,16 @@ class _CategoryWidgetState extends State<CategoryWidget> {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .bodyLarge!
-                  .copyWith(fontWeight: FontWeight.bold),
+                  .titleLarge!
+                  .copyWith(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
           const SizedBox(
-            height: 16,
+            height: 24,
           ),
           _buildTextSearch(),
           const SizedBox(
-            height: 16,
+            height: 24,
           ),
           BlocBuilder<SearchCubit, SearchModel?>(builder: (context, state) {
             if (state?.value != null && state!.value!.isNotEmpty) {
@@ -93,12 +97,12 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                           .contains(state.value?.toLowerCase() ?? "") ??
                       false)
                   .toList();
-              print(listForm.length);
             } else {
               _init();
             }
             return Expanded(
               child: SingleChildScrollView(
+                physics: ClampingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -134,8 +138,17 @@ class _CategoryWidgetState extends State<CategoryWidget> {
       height: 48,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Color.fromARGB(109, 255, 68, 68))),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(24)),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromARGB(255, 231, 231, 231).withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
       child: Row(
         children: [
           Icon(

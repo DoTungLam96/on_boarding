@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class IBoardScaffold extends StatelessWidget {
+class BaseScaffold extends StatelessWidget {
   final Widget? body;
   final PreferredSizeWidget? appBar;
   final Widget? bottomNavigationBar;
@@ -9,7 +9,7 @@ class IBoardScaffold extends StatelessWidget {
   final bool extendBodyBehindAppBar;
   final EdgeInsets? bottomNavigationPadding;
   final Color? backgroundColor;
-  const IBoardScaffold(
+  const BaseScaffold(
       {Key? key,
       this.body,
       this.appBar,

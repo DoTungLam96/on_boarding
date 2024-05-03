@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_on_boarding/screen/document_screen.dart';
 import 'package:flutter_on_boarding/screen/home_screen.dart';
 import 'package:flutter_on_boarding/screen/meeting_screen.dart';
@@ -23,6 +26,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     _bottomNavigationKey = GlobalKey();
     _pageController = PageController();
+
+    // if (Platform.isIOS) {
+    //   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    //     statusBarColor: Colors.black,
+    //   ));
+    // }
     super.initState();
   }
 

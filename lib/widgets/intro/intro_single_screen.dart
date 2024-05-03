@@ -159,10 +159,11 @@ class IntroSingleScreenState extends State<IntroSingleScreen> {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 150),
       margin: const EdgeInsets.symmetric(horizontal: 3.0),
-      height: isActive ? 6 : 4,
-      width: isActive ? 6 : 4,
+      height: isActive ? 8 : 8,
+      width: isActive ? 8 : 8,
       decoration: BoxDecoration(
-        color: isActive ? const Color(0xFF7B51D3) : Colors.grey,
+        color: isActive ? Colors.grey : Colors.white,
+        border: Border.all(color: Colors.grey),
         borderRadius: const BorderRadius.all(Radius.circular(6)),
       ),
     );
