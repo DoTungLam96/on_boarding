@@ -18,6 +18,8 @@ import '../mock/list_favourite_home_mock.dart';
 import '../widgets/home/item_list_document_processing.dart';
 import '../widgets/home/item_list_favourite.dart';
 import '../widgets/home/mission_chart.dart';
+import '../widgets/home/mission_chart_new.dart';
+import '../widgets/home/note_chart_mission.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -147,10 +149,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildMissionChart(BuildContext context) {
     return Container(
-      color: Colors.white,
       width: MediaQuery.of(context).size.width,
-      height: 350,
+      height: 450,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Nhiệm vụ đơn vị",
@@ -160,8 +162,70 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 12,
           ),
           Expanded(
-            child:
-                Container(height: 350, child: StackedBarChart.withSampleData()),
+            child: Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(8),
+                  topRight: Radius.circular(8),
+                ),
+              ),
+              height: 360,
+              child: StackedFillColorBarChart.withSampleData(),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 70,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(8),
+                bottomRight: Radius.circular(8),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    NoteChart(
+                      color: WidgetCommon.green_chart_color,
+                      title: "Hoàn thành",
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    NoteChart(
+                      color: WidgetCommon.orange_chart_color,
+                      title: "Sắp tới hạn",
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 32,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    NoteChart(
+                      color: WidgetCommon.blue_chart_color,
+                      title: "Đang thực hiện",
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    NoteChart(
+                      color: WidgetCommon.rose_chart_color,
+                      title: "Chậm tiến độ",
+                    ),
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -170,7 +234,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildMeetingCalendart(BuildContext context) {
     return Container(
-      color: Colors.white,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
       width: MediaQuery.of(context).size.width,
       height: 120,
       child: Text(

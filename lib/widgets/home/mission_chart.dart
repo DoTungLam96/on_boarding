@@ -29,44 +29,94 @@ class StackedBarChart extends StatelessWidget {
   /// Create series list with multiple series
   static List<charts.Series<OrdinalSales, String>> _createSampleData() {
     final desktopSalesData = [
-      new OrdinalSales('2014', 5),
-      new OrdinalSales('2015', 25),
-      new OrdinalSales('2016', 100),
-      new OrdinalSales('2017', 75),
+      OrdinalSales('B.CNTT', 5),
+      OrdinalSales('B.CNTT', 25),
+      OrdinalSales('B.CNTT', 20),
+      OrdinalSales('B.CNTT', 15),
     ];
 
     final tableSalesData = [
-      new OrdinalSales('2014', 25),
-      new OrdinalSales('2015', 50),
-      new OrdinalSales('2016', 10),
-      new OrdinalSales('2017', 20),
+      OrdinalSales('20141', 25),
+      OrdinalSales('20152', 50),
+      OrdinalSales('20163', 10),
+      OrdinalSales('20174', 20),
     ];
 
     final mobileSalesData = [
-      new OrdinalSales('2014', 10),
-      new OrdinalSales('2015', 15),
-      new OrdinalSales('2016', 50),
-      new OrdinalSales('2017', 45),
+      OrdinalSales('2014', 10),
+      OrdinalSales('2015', 15),
+      OrdinalSales('2016', 50),
+      OrdinalSales('2017', 45),
+    ];
+    final mobileSalesData2 = [
+      OrdinalSales('2014', 15),
+      OrdinalSales('2015', 15),
+      OrdinalSales('2016', 50),
+      OrdinalSales('2017', 30),
+    ];
+    final mobileSalesData3 = [
+      OrdinalSales('2014', 10),
+      OrdinalSales('2015', 15),
+      OrdinalSales('2016', 20),
+      OrdinalSales('2017', 5),
+    ];
+    final mobileSalesData4 = [
+      OrdinalSales('2014', 10),
+      OrdinalSales('2015', 25),
+      OrdinalSales('2016', 50),
+      OrdinalSales('2017', 15),
+    ];
+    final mobileSalesData5 = [
+      OrdinalSales('2014', 30),
+      OrdinalSales('2015', 25),
+      OrdinalSales('2016', 50),
+      OrdinalSales('2017', 15),
     ];
 
     return [
-      new charts.Series<OrdinalSales, String>(
+      charts.Series<OrdinalSales, String>(
         id: 'Desktop',
         domainFn: (OrdinalSales sales, _) => sales.year,
         measureFn: (OrdinalSales sales, _) => sales.sales,
         data: desktopSalesData,
+        colorFn: (_, __) => charts.MaterialPalette.red.shadeDefault,
+        fillColorFn: (_, __) => charts.MaterialPalette.red.shadeDefault.lighter,
       ),
-      new charts.Series<OrdinalSales, String>(
+      charts.Series<OrdinalSales, String>(
         id: 'Tablet',
         domainFn: (OrdinalSales sales, _) => sales.year,
         measureFn: (OrdinalSales sales, _) => sales.sales,
         data: tableSalesData,
       ),
-      new charts.Series<OrdinalSales, String>(
+      charts.Series<OrdinalSales, String>(
         id: 'Mobile',
         domainFn: (OrdinalSales sales, _) => sales.year,
         measureFn: (OrdinalSales sales, _) => sales.sales,
         data: mobileSalesData,
+      ),
+      charts.Series<OrdinalSales, String>(
+        id: 'Mobile1',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: mobileSalesData5,
+      ),
+      charts.Series<OrdinalSales, String>(
+        id: 'Mobile2',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: mobileSalesData2,
+      ),
+      charts.Series<OrdinalSales, String>(
+        id: 'Mobile3',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: mobileSalesData3,
+      ),
+      charts.Series<OrdinalSales, String>(
+        id: 'Mobile4',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: mobileSalesData4,
       ),
     ];
   }

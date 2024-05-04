@@ -47,6 +47,7 @@ class ItemListFavourite extends StatelessWidget {
           ),
           Positioned(
             right: 0,
+            top: 4,
             child: Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.all(7),
@@ -54,16 +55,14 @@ class ItemListFavourite extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.red,
               ),
-              child:
-
-                  FittedBox(
+              child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   '$amout'.length > 3 ? "999+" : '$amout',
                   overflow: TextOverflow.ellipsis,
                   style: titleTextStyle ??
                       Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 10,
+                          fontSize: 9,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                 ),

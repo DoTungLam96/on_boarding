@@ -44,8 +44,11 @@ dependencies:
   flutter_svg_provider: ^1.0.3
   auto_size_text: ^3.0.0
   intl: any
-  charts_flutter: any
-
+  # charts_flutter: any
+  # charts_common:
+  #   path: packages/chart_common
+  charts_flutter:
+    path: packages/chart_flutter
 dev_dependencies:
   flutter_test:
     sdk: flutter

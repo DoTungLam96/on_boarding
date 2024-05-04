@@ -43,4 +43,9 @@ class WidgetCommon {
 
   static Color get background_color_home =>
       const Color.fromARGB(255, 237, 243, 249);
+
+  static Color get green_chart_color => const Color(0xff00A773);
+  static Color get orange_chart_color => const Color(0xffF38C42);
+  static Color get blue_chart_color => const Color(0xff0671E0);
+  static Color get rose_chart_color => const Color(0xffF4597A);
 }
