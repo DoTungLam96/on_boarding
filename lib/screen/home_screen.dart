@@ -18,7 +18,7 @@ import '../mock/list_favourite_home_mock.dart';
 import '../widgets/home/item_list_document_processing.dart';
 import '../widgets/home/item_list_favourite.dart';
 import '../widgets/home/mission_chart.dart';
-import '../widgets/home/mission_chart_new.dart';
+
 import '../widgets/home/note_chart_mission.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -148,9 +148,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildMissionChart(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
-      height: 450,
+      height: 410,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.only(top: 8, left: 4, right: 8),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -171,12 +171,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   topRight: Radius.circular(8),
                 ),
               ),
-              height: 360,
-              child: StackedFillColorBarChart.withSampleData(),
+              height: 300,
+              child: MissionChart(),
             ),
           ),
           Container(
             width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.only(bottom: 4),
             height: 70,
             decoration: BoxDecoration(
               color: Colors.white,
